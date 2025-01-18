@@ -18,6 +18,14 @@
 
 namespace JWR\DevPlugin;
 
+use JWR_Dev_Plugin\Admin_Page;
+
 defined( 'ABSPATH' ) || exit;
 
 require_once __DIR__ . '/helpers/plugin-updates.php';
+
+// Classes.
+require_once __DIR__ . '/classes/class-admin-page.php';
+require_once __DIR__ . '/classes/class-admin-subpage.php';
+
+Admin_Page::init();
