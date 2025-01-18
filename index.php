@@ -1,0 +1,23 @@
+<?php
+/**
+ * JWR Shared Options
+ *
+ * @package JWR_Dev_Plugin
+ * @author Josh Robbs <josh@joshrobbs.com>
+ *
+ * @wordpress-plugin
+ * Plugin Name:       JWR Dev Plugin
+ * Plugin URI:        https://github.com/jwrobbs/jwr-dev-plugin
+ * Description:       Adds scripts and widgets for devs.
+ * Version:           0.1.0
+ * Author:            Josh Robbs <josh@joshrobbs.com>
+ * Author URI:        https://joshrobbs.com
+ * Text Domain:       jwr
+ * Requires PHP:      8.0
+ */
+
+namespace JWR\DevPlugin;
+
+defined( 'ABSPATH' ) || exit;
+
+require_once __DIR__ . '/helpers/plugin-updates.php';
