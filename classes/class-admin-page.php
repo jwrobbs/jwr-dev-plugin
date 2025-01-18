@@ -36,10 +36,10 @@ class Admin_Page {
 	public static function register_pages() {
 		// Add the main options page.
 		add_menu_page(
-			'Dev Plugin Options',          // Page title.
-			'Dev Plugin',                  // Menu title.
+			'JWR Options',          // Page title.
+			'JWR Options',                  // Menu title.
 			'manage_options',              // Capability.
-			'dev-plugin',                  // Menu slug.
+			'jwr-options',                  // Menu slug.
 			array( __CLASS__, 'render_main_page' ), // Callback function.
 			'dashicons-admin-generic',     // Icon.
 			80                             // Position.
@@ -78,6 +78,6 @@ class Admin_Page {
 	 * Render the main options page.
 	 */
 	public static function render_main_page() {
-		echo '<div class="wrap"><h1>Dev Plugin Main Options</h1><p>Welcome to the Dev Plugin options page.</p></div>';
+		echo '<div class="wrap"><h1>JWR Options</h1><p>Welcome to the Dev Plugin options page.</p></div>';
 	}
 }

@@ -23,7 +23,7 @@ function my_plugin_check_for_updates( $transient ) {
 	$plugin_uri      = $plugin_data['PluginURI'];
 
 	if ( is_null( $current_version ) ) {
-		$current_version = '0.1';
+		$current_version = '0.0.1';
 	}
 
 	$response = wp_remote_get( 'https://raw.githubusercontent.com/jwrobbs/jwr-dev-plugin/main/plugin-update.json' );

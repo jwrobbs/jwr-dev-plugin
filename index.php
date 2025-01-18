@@ -9,7 +9,7 @@
  * Plugin Name:       JWR Dev Plugin
  * Plugin URI:        https://github.com/jwrobbs/jwr-dev-plugin
  * Description:       Adds scripts and widgets for devs.
- * Version:           0.1.0
+ * Version:           0.1.1
  * Author:            Josh Robbs <josh@joshrobbs.com>
  * Author URI:        https://joshrobbs.com
  * Text Domain:       jwr
