@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions to make the plugin operater smoothly.
+ * Sets up GitHub based updates.
  *
  * @package JWR_Dev_Plugin
  * @author Josh Robbs <josh@joshrobbs.com>
