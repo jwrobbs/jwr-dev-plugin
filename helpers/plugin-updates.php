@@ -18,7 +18,7 @@ function my_plugin_check_for_updates( $transient ) {
 	}
 
 	// Get current plugin version and URI dynamically.
-	$plugin_data     = get_plugin_data( __FILE__ ); // __FILE__ is the main plugin file.
+	$plugin_data     = get_plugin_data( JWR_DEV_PLUGIN );
 	$current_version = $plugin_data['Version'] ?? '0.0.1';
 	$plugin_uri      = $plugin_data['PluginURI'];
 
@@ -45,7 +45,7 @@ function my_plugin_check_for_updates( $transient ) {
 	return $transient;
 }
 add_action(
-	'plugin_loaded',
+	'plugins_loaded',
 	function () {
 		add_filter( 'site_transient_update_plugins', __NAMESPACE__ . '\my_plugin_check_for_updates' );
 	}
