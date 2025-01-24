@@ -24,6 +24,7 @@ class AME_Styler {
 	 * Initialize the admin menu system.
 	 */
 	public static function init() {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		if ( ! is_plugin_active( 'admin-menu-editor/menu-editor.php' ) ) {
 			return;
 		}
