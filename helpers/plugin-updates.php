@@ -28,10 +28,6 @@ function my_plugin_check_for_updates( $transient ) {
 		return $transient;
 	}
 
-	error_log( 'Plugin data: ' . print_r( $plugin_data, true ) );
-	error_log( 'Current version: ' . $current_version );
-	error_log( 'Reponse: ' . wp_remote_retrieve_body( $response ) );
-
 	$update_data = json_decode( wp_remote_retrieve_body( $response ), true );
 	if ( version_compare( $update_data['version'], $current_version, '>' ) ) {
 		$transient->response['jwr-dev-plugin/index.php'] = (object) array(
