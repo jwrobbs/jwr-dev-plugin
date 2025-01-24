@@ -24,6 +24,12 @@ class Admin_Page {
 	protected $subpages = array();
 
 	/**
+	 * Parent slug for the main menu.
+	 *
+	 * @var string
+	 */
+	protected static $parent_slug = 'jwr-options';
+	/**
 	 * Instance of the Admin_Page class.
 	 *
 	 * @var Admin_Page
@@ -44,12 +50,13 @@ class Admin_Page {
 
 		$page_title = 'JWR Options';
 		$menu_title = 'JWR Options';
+		$slug       = self::$parent_slug;
 		// Add the main options page.
 		add_menu_page(
 			$page_title, // Page title.
 			$menu_title, // Menu title.
 			'manage_options', // Capability.
-			'jwr-options', // Menu slug.
+			$slug, // Menu slug.
 			array( __CLASS__, 'render_main_page' ), // Callback function.
 			'dashicons-admin-generic', // Icon.
 			80 // Position.
@@ -63,10 +70,11 @@ class Admin_Page {
 	 * Dynamically register subpages.
 	 */
 	private static function register_subpages() {
-		$admin_page = self::get_instance();
+		$admin_page  = self::get_instance();
+		$parent_slug = self::$parent_slug;
 		foreach ( $admin_page->subpages as $subpage ) {
-			add_submenu_page(
-				'dev-plugin',                // Parent slug.
+			$result = add_submenu_page(
+				$parent_slug,                // Parent slug.
 				$subpage->get_title(),       // Page title.
 				$subpage->get_menu_title(),  // Menu title.
 				'manage_options',            // Capability.
