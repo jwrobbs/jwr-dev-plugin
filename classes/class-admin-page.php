@@ -34,15 +34,18 @@ class Admin_Page {
 	 * Register the main menu and subpages.
 	 */
 	public static function register_pages() {
+
+		$page_title = 'JWR Options';
+		$menu_title = 'JWR Options';
 		// Add the main options page.
 		add_menu_page(
-			'JWR Options',          // Page title.
-			'JWR Options',                  // Menu title.
-			'manage_options',              // Capability.
-			'jwr-options',                  // Menu slug.
+			$page_title, // Page title.
+			$menu_title, // Menu title.
+			'manage_options', // Capability.
+			'jwr-options', // Menu slug.
 			array( __CLASS__, 'render_main_page' ), // Callback function.
-			'dashicons-admin-generic',     // Icon.
-			80                             // Position.
+			'dashicons-admin-generic', // Icon.
+			80 // Position.
 		);
 
 		// Add subpages.
@@ -79,5 +82,6 @@ class Admin_Page {
 	 */
 	public static function render_main_page() {
 		echo '<div class="wrap"><h1>JWR Options</h1><p>Welcome to the Dev Plugin options page.</p></div>';
+		echo '<div class="wrap">- Add fields to set titles.</div>';
 	}
 }
