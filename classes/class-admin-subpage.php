@@ -6,7 +6,7 @@
  * @author Josh Robbs <josh@joshrobbs.com>
  */
 
-namespace JWR_Dev_Plugin;
+namespace JWR_Dev_Plugin\Classes;
 
 defined( 'ABSPATH' ) || exit;
 
