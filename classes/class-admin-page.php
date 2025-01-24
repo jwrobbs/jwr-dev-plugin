@@ -6,9 +6,9 @@
  * @author Josh Robbs <josh@joshrobbs.com>
  */
 
-namespace JWR_Dev_Plugin;
+namespace JWR_Dev_Plugin\Classes;
 
-use JWR_Dev_Plugin\Admin_Subpage;
+use JWR_Dev_Plugin\Classes\Admin_Subpage;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -22,6 +22,13 @@ class Admin_Page {
 	 * @var Subpage_Definition[]
 	 */
 	private static $subpages = array();
+
+	/**
+	 * Instance of the Admin_Page class.
+	 *
+	 * @var Admin_Page
+	 */
+	private static $instance;
 
 	/**
 	 * Initialize the admin menu system.
@@ -74,7 +81,9 @@ class Admin_Page {
 	 * @param Admin_Subpage $subpage The subpage instance to add.
 	 */
 	public static function add_subpage( Admin_Subpage $subpage ) {
-		self::$subpages[] = $subpage;
+
+		$admin_page             = self::get_instance();
+		$admin_page->subpages[] = $subpage;
 	}
 
 	/**
@@ -83,5 +92,18 @@ class Admin_Page {
 	public static function render_main_page() {
 		echo '<div class="wrap"><h1>JWR Options</h1><p>Welcome to the Dev Plugin options page.</p></div>';
 		echo '<div class="wrap">- Add fields to set titles.</div>';
+		echo '<div class="wrap">- Add fields to activate plugin features.</div>';
+	}
+
+	/**
+	 * Get instance of the Admin_Page class.
+	 *
+	 * @return Admin_Page
+	 */
+	public static function get_instance() {
+		if ( ! isset( self::$instance ) ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
 	}
 }
