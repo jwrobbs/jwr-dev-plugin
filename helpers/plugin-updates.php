@@ -18,7 +18,7 @@ function my_plugin_check_for_updates( $transient ) {
 	}
 
 	// Get current plugin version and URI dynamically.
-	$plugin_data     = get_plugin_data( JWR_DEV_PLUGIN );
+	$plugin_data     = get_plugin_data( JWR_DEV_PLUGIN_PATH . 'index.php' );
 	$current_version = $plugin_data['Version'] ?? '0.0.1';
 	$plugin_uri      = $plugin_data['PluginURI'];
 
