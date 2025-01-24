@@ -21,14 +21,14 @@ class Admin_Page {
 	 *
 	 * @var Subpage_Definition[]
 	 */
-	private static $subpages = array();
+	protected $subpages = array();
 
 	/**
 	 * Instance of the Admin_Page class.
 	 *
 	 * @var Admin_Page
 	 */
-	private static $instance;
+	protected static $instance;
 
 	/**
 	 * Initialize the admin menu system.
@@ -63,7 +63,8 @@ class Admin_Page {
 	 * Dynamically register subpages.
 	 */
 	private static function register_subpages() {
-		foreach ( self::$subpages as $subpage ) {
+		$admin_page = self::get_instance();
+		foreach ( $admin_page->subpages as $subpage ) {
 			add_submenu_page(
 				'dev-plugin',                // Parent slug.
 				$subpage->get_title(),       // Page title.
